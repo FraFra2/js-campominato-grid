@@ -18,7 +18,7 @@ let container = document.getElementById("gridContainer");
 generateGridButton.addEventListener("click",
     function(){
         generateGrid(diff);
-
+        this.disabled = true;
     }
 ); 
 
@@ -30,18 +30,15 @@ function generateGrid(size){
             size = 100;
             selClass = "smallCell";
             break;
-    
         case "diff2":
             size = 81;
             selClass = "mediumCell";
             break;
-
         case "diff3":
             size = 49;
             selClass = "largeCell";
             break;
     }
-
     for (let index = 1; index <= size; index++) {
         cell = document.createElement("div");
         cell.classList.add("cell");
@@ -52,7 +49,6 @@ function generateGrid(size){
         function(){
             console.log(this.innerHTML);
             this.classList.toggle("activeCell");
-            console.log(this);
         });
     }
 }

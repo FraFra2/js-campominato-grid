@@ -17,18 +17,20 @@
     </header>
     <main>
 
-        <div class="gamesetting my-3 d-flex justify-content-center align-content-center">
+        <div class="gamesetting my-3 d-flex justify-content-around align-content-center">
+            <div>
+                <label for="diff" class ="fs-5">Selezionare la difficoltà del gioco prego:</label>
+                <select name="diffSel" class = "rounded p-1" id="diff">
+                    <option value="diff1">Difficoltà 1</option>
+                    <option value="diff2">Difficoltà 2</option>
+                    <option value="diff3">Difficoltà 3</option>
+                </select>
+            </div>
             <button id = "generateGrid" class = "rounded border border-0 p-2 text-white text-bg-info">
                 Genera la Griglia.
             </button>
-            <select name="" id="diff">
-                <option value="diff1">Difficoltà 1</option>
-                <option value="diff2">Difficoltà 2</option>
-                <option value="diff3">Difficoltà 3</option>
-
-            </select>
         </div>
-
+        <hr>
         <div id = "gridContainer" class="container d-flex flex-wrap"></div>
 
     </main>

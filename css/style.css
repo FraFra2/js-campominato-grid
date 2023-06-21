@@ -4,8 +4,6 @@
 }
 
 .cell{
-    height: 100px;
-    line-height: 120px;
     text-align: center;
     border: 2.5px solid lightgreen;
     background-color: darkblue;
@@ -19,14 +17,22 @@
 }
 .smallCell{
     width: calc(100% / 10);
+    height: 100px;
+    line-height: 100px;
+
+
 }
 
 .mediumCell{
     width: calc(100% / 9);
+    line-height: 120px;
+    height: 120px;
 }
 
 .largeCell{
     width: calc(100% / 7);
+    height: 150px;
+    line-height: 150px;
 }
 header{
     background-image: url("../img/header-pattern.jpg");
