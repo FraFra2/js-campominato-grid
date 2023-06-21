@@ -41,7 +41,7 @@ function generateGrid(size){
     }
     for (let index = 1; index <= size; index++) {
         cell = document.createElement("div");
-        cell.classList.add("cell");
+        cell.classList.add("cell", "d-flex", "justify-content-center", "align-items-center");
         cell.classList.add(selClass);
         cell.innerHTML = index;
         container.append(cell);

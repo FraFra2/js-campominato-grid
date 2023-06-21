@@ -1,6 +1,7 @@
 
 .container{
     width: 1200px;
+    height: 1200px;
 }
 
 .cell{
@@ -17,22 +18,22 @@
 }
 .smallCell{
     width: calc(100% / 10);
-    height: 100px;
-    line-height: 100px;
+    height: 120px;
+    /* line-height: calc(100% / 10); */
 
 
 }
 
 .mediumCell{
     width: calc(100% / 9);
-    line-height: 120px;
-    height: 120px;
+    /* line-height: calc(100% / 9); */
+    height: 133px;
 }
 
 .largeCell{
     width: calc(100% / 7);
-    height: 150px;
-    line-height: 150px;
+    height: 171px;
+    /* line-height: calc(100% / 7); */
 }
 header{
     background-image: url("../img/header-pattern.jpg");
