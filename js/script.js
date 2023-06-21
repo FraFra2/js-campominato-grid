@@ -29,7 +29,8 @@ function generateGrid(size){
         cell.addEventListener("click", 
         function(){
             console.log(this.innerHTML);
-            cell.classList.add("text-left");
+            this.classList.toggle("activeCell");
+            console.log(this);
         });
     }
 }
