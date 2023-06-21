@@ -9,21 +9,43 @@
 // - con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe;
 // - con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
 const generateGridButton = document.getElementById("generateGrid");
+const diffSel = document.getElementById("diff");
 
-let diff = 100;
+let diff;
 let cell;
 let container = document.getElementById("gridContainer");
 
 generateGridButton.addEventListener("click",
     function(){
         generateGrid(diff);
+
     }
 ); 
 
 function generateGrid(size){
+    let selClass;
+    selectedDiff = diffSel.value;
+    switch (selectedDiff) {
+        case "diff1":
+            size = 100;
+            selClass = "smallCell";
+            break;
+    
+        case "diff2":
+            size = 81;
+            selClass = "mediumCell";
+            break;
+
+        case "diff3":
+            size = 49;
+            selClass = "largeCell";
+            break;
+    }
+
     for (let index = 1; index <= size; index++) {
         cell = document.createElement("div");
         cell.classList.add("cell");
+        cell.classList.add(selClass);
         cell.innerHTML = index;
         container.append(cell);
         cell.addEventListener("click", 
