@@ -1,19 +1,23 @@
 
 .container{
-    width: 1170px;
+    width: 1200px;
 }
 
 .cell{
     width: 10%;
-    height: 100px;
-    line-height: 100px;
+    height: 120px;
+    line-height: 120px;
     text-align: center;
     border: 2.5px solid lightgreen;
-    background-color: lightblue;
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: darkblue;
+    color: white;
     cursor: pointer;
 }
 
+.activeCell{
+    background-color: lightblue;
+    color: black;
+}
 
 header{
     background-image: url("../img/header-pattern.jpg");

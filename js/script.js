@@ -11,14 +11,29 @@
 const generateGridButton = document.getElementById("generateGrid");
 
 let diff = 100;
-
+let cell;
 let container = document.getElementById("gridContainer");
 
+generateGridButton.addEventListener("click",
+    function(){
+        generateGrid(diff);
+    }
+); 
 
-for (let index = 1; index <= 100; index++) {
-    let cell = document.createElement("div");
-    cell.classList.add("cell");
-    cell.innerHTML = index;
-    container.append(cell);
+function generateGrid(size){
+    for (let index = 1; index <= size; index++) {
+        cell = document.createElement("div");
+        cell.classList.add("cell");
+        cell.innerHTML = index;
+        container.append(cell);
+        cell.addEventListener("click", 
+        function(){
+            console.log(this.innerHTML);
+            cell.classList.add("text-left");
+        });
+    }
 }
+
+
+
 
