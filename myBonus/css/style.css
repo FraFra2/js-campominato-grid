@@ -10,7 +10,6 @@ body, header, #gridContainer, .gamesetting, main{
     background-color: var(--darkest-blue);
     color: white;
     font-size: 1rem;
-
 }
 
 button{
@@ -36,11 +35,13 @@ button:disabled{
     color: white;
     cursor: pointer;
     border-radius: 20px;
+    transition: .2s box-shadow ease-in-out;
+    text-shadow: 2px 2px var(--navy-blue);
 }
 
 .activeCell{
     background-color: var(--navy-blue);
-    transform: rotate(180deg);
+    text-shadow: 2px 2px var(--darkest-blue);
 }
 
 .smallCell{

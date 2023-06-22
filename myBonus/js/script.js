@@ -2,9 +2,27 @@
 // '<i class="bi bi-heart-fill"></i>',
 // '<i class="bi bi-heart-half"></i>',
 
+//Aggiunta icon random
+//Piccka un' icona random dall'array di icone
+// selIcon = pickRandomFromArray(itemTypesIcons);
 
+let itemsInv = ['<i class="px-2 bi bi-house-door-fill"></i>',
+                '<i class="px-2 bi bi-bank2"></i>',
+                '<i class="px-2 bi bi-bricks"></i>',
+                '<i class="px-2 bi bi-currency-dollar"></i>']
 
+const invButtons = document.querySelectorAll(".inventory .cell");
 
+for (let index = 0; index < invButtons.length; index++) {
+    const element = invButtons[index];
+    element.innerHTML += itemsInv[index];
+
+    element.addEventListener("click", function(){
+        this.classList.toggle("activeCell");
+    });
+    
+
+}
 
 const generateGridButton = document.getElementById("generateGrid");
 const diffSel = document.getElementById("diff");
@@ -24,14 +42,15 @@ let itemTypesIcons = ['<i class="bi bi-circle-fill"></i>',
 
 generateGridButton.addEventListener("click",
     function(){
+        container.innerHTML = "";
+        iteration = 0;
+        iterationLabel.innerHTML = `No. Iterazioni: ${iteration}`;
         generateGrid(diff);
-        this.disabled = true;
     }
 ); 
 
 function generateGrid(size){
     let selClass;
-    let selIcon;
     selectedDiff = diffSel.value; //Seleziona valore della sel.
     switch (selectedDiff) {
         case "diff1":
@@ -49,14 +68,8 @@ function generateGrid(size){
     }
     for (let index = 1; index <= size; index++) {
         cell = document.createElement("div");
-        cell.classList.add("cell", "d-flex", "justify-content-center", "align-items-center");
-        //Aggiunta icon random
+        cell.classList.add("cell", "d-flex", "justify-content-center", "align-items-center");        
         cell.classList.add(selClass);
-        //Piccka un' icona random dall'array di icone
-        selIcon = pickRandomFromArray(itemTypesIcons);
-
-        cell.innerHTML = selIcon;
-
         container.append(cell);
 
         //Onclick della cell
@@ -64,7 +77,7 @@ function generateGrid(size){
 
         function(){
             console.log(this.innerHTML);
-            this.classList.toggle("activeCell");
+            this.classList.add("activeCell");
             iteration++;
             iterationLabel.innerHTML = `No. Iterazioni: ${iteration}`;
         });
