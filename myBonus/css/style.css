@@ -1,0 +1,71 @@
+:root{
+    /* Palette */
+    --darkest-blue: #001C30;
+    --navy-blue: #176B87;
+    --teal-blue: #64CCC5;
+    --mint-blue: #DAFFFB;
+}
+
+body, header, #gridContainer, .gamesetting, main{
+    background-color: var(--darkest-blue);
+    color: white;
+    font-size: 1rem;
+
+}
+
+button{
+    background-color: var(--navy-blue);
+    color: white;
+    font-size: 1rem;
+    transition: .2s all ease-in-out;
+}
+
+button:hover{
+    box-shadow: 5px 5px var(--teal-blue);
+    font-size: 1.25rem;
+}
+
+button:disabled{
+    display: none;
+}
+
+.cell{
+    text-align: center;
+    border: 15px solid var(--darkest-blue);
+    background-color: var(--teal-blue);
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.activeCell{
+    background-color: var(--navy-blue);
+    transform: rotate(180deg);
+}
+
+.smallCell{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    font-size: 1.5rem;
+    line-height: calc(100% / 10);
+}
+
+.mediumCell{
+    width: calc(100% / 9);
+    font-size: 2.5rem;
+    line-height: calc(100% / 9);
+    height: calc(100% / 9);
+}
+
+.largeCell{
+    width: calc(100% / 7);
+    font-size: 5rem;
+    height: calc(100% / 7);
+    line-height: calc(100% / 7); 
+}
+
+#gridContainer{
+    width: 1000px;
+    height: 1000px;
+}
+
